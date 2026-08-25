@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="grid.css"/>
+</head>
+
+    <body>
+        <div id="container">
+            <header>
+                <div class="icones-header">
+                    <div class="busca">
+                        <img src="imgs/buscar-icone.png" alt="Buscar" class="icone-busca">
+                        <div class="caixa-busca">
+                            <input type="text" placeholder="Pesquisar...">
+                            <button type="button">
+                                <img src="imgs/buscar-icone.png" alt="Buscar">
+                            </button>
+                        </div>
+                    </div>
+                    <a href="login-cadastro/cadastro.php">
+                        <img src="imgs/login-icone.png" alt="Login">
+                    </a>
+                    <img src="imgs/carrinho-icone.png" alt="Carrinho">
+                </div>
+                <img class="logo" src="imgs/logo-fundo-azul.png" alt="Logotipo Lead"> 
+
+                <button class="menu-mobile" id="menuMobile">☰</button>
+
+                <nav class="menu" id="menu">
+                    <a href="index.html"><button>Home</button></a>
+                    <a href="Sobrenos.html"><button>Sobre nós</button></a>
+                    <a href="Produtos.html"><button>Produtos</button></a>
+                    <a href="Contato.html"><button>Contato</button></a>
+                </nav>
+            </header>
+        
+            
+            <section class="secao-carrossel">
+                <div id="carrossel">
+                    <button class="botao-esquerda" id="btnEsq">❮</button>
+                    <button class="botao-direita" id="btnDir">❯</button>
+
+                    <div class="slides" id="paineis-slides">
+                        <img src="imgs/carregador1.png" alt="Carregador 1">
+                        <img src="imgs/carregador2.png" alt="Carregador 2">
+                        <img src="imgs/mousepad1.png" alt="Mousepad 1">
+                        <img src="imgs/mousepad2.png" alt="Mousepad 2">
+                    </div>
+                </div>
+
+                <div class="indicadores-container">
+                    <span class="ponto ativo" onclick="irParaSlide(0)"></span>
+                    <span class="ponto" onclick="irParaSlide(1)"></span>
+                    <span class="ponto" onclick="irParaSlide(2)"></span>
+                    <span class="ponto" onclick="irParaSlide(3)"></span>
+                </div>
+            </section>
+
+
+            <aside class="cor">
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dignissimos sunt necessitatibus non autem, expedita delectus quod placeat tempore suscipit. Neque repellendus magni odit nobis, eligendi aspernatur ratione veritatis quod? lorem</h1>
+            </aside>
+            
+            <main class="cor">
+                <article>
+                    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus distinctio odit voluptas error eos itaque mollitia quibusdam sed illo voluptatem nulla quos harum, assumenda facere. Error aliquam reiciendis minima sed?</h1>
+                </article>
+
+                <section id="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6pxsEF5FjOE?si=ybfyEjQRlLtRamhm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                </section>
+
+                <article id="descricao-video">
+                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi inventore nobis dolorem libero harum perferendis at debitis, blanditiis voluptatum architecto necessitatibus, et neque sequi quam. A dolor nam adipisci porro?</h1>
+                </article>
+            </main>
+
+            <footer>
+                <img class="clicko" src="imgs/clicko-fundo-branco-removebg.png" alt="Logotipo Lead">
+                <h2 >&copy; LEAD</h2>
+                <p>Feito para fins educacionais. CTI - 2026</p>
+                <p>Alunos: Ana Livia Orzam N°4, Davi Emer N°9, Eduardo Rezende N°11, Lara Ibrahim N°20, Lorena Mainini N°23</p>
+            </footer>
+        </div>
+
+        <script>
+        const hoje = new Date();
+        document.getElementById("data").textContent =
+            hoje.toLocaleDateString("pt-BR");
+        </script>
+
+        <script>
+            const menu = document.querySelector(".menu");
+            const links = document.querySelectorAll(".menu a");
+
+            function mover(link){
+                menu.style.setProperty("--x", link.offsetLeft + "px");
+                menu.style.setProperty("--w", link.offsetWidth + "px");
+            }
+
+            links.forEach(link => {
+                link.addEventListener("mouseenter", () => mover(link));
+            });
+
+            mover(links[0]);
+        </script>
+
+        <script >
+            const menuMobile = document.getElementById("menuMobile");
+            const menuNavegacao = document.getElementById("menu");
+
+            menuMobile.addEventListener("click", () => {
+                menuNavegacao.classList.toggle("aberto");
+            });
+        </script>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
