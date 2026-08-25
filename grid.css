@@ -1,4 +1,18 @@
 /* O CONTAINER PRINCIPAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 #container {
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -27,197 +41,565 @@
 /* TABLETS */
 @media (max-width: 900px) {
     #container {
-        grid-template-columns: 180px 1fr;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        grid-template-columns: 180px minmax(0, 1fr);
+
         grid-template-areas:
             "header header"
             "section section"
             "aside main"
             "footer footer";
+
+        overflow-x: hidden;
     }
+
 
     .grade-integrantes {
         grid-template-columns: 1fr 1fr;
     }
 
+
     header {
+        width: 100%;
+        max-width: 100%;
+
         padding: 50px 20px;
+
+        min-width: 0;
     }
+
 
     .logo {
         width: 60vw;
         max-width: 500px;
     }
 
+
     .menu {
         width: 95%;
+        max-width: 100%;
+
         height: auto;
+
+        box-sizing: border-box;
     }
+
 
     .menu button {
         width: 100px;
         height: 60px;
+
         font-size: 15px;
+
         margin: 0 10px;
     }
+
 
     .menu::before {
         height: 50px;
     }
 
+
     .secao-carrossel {
         width: 100%;
+        max-width: 100%;
+
         padding: 0 10px;
+
+        box-sizing: border-box;
     }
 
+
     #carrossel {
+        width: 100%;
+        max-width: 100%;
+
         height: 400px;
     }
 
+
+    main,
+    aside {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+
     main {
         padding: 15px;
+    }
+
+    #container.pagina-contato main.contato-pagina {
+        padding: 45px 20px;
+    }
+
+    .contato-card {
+        max-width: 700px;
     }
 }
 
 /* CELULARES */
 @media (max-width: 600px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
     #container {
         display: grid;
-        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        grid-template-columns: minmax(0, 1fr);
+
         grid-template-areas:
             "header"
             "section"
             "aside"
             "main"
             "footer";
+
+        gap: 15px;
+
+        overflow-x: hidden;
     }
+
 
     .grade-integrantes {
         grid-template-columns: 1fr;
     }
 
+
     .secao-pilares {
         grid-template-columns: 1fr;
     }
 
+
     header {
+        width: 100%;
+        max-width: 100%;
+
         padding: 30px 10px;
+
+        min-width: 0;
+
+        box-sizing: border-box;
     }
+
 
     .logo {
         width: 80vw;
         max-width: 400px;
+
+        height: auto;
     }
+
+
+    /* MENU */
 
     .menu {
         width: 100%;
+        max-width: 100%;
+
         height: auto;
+
         padding: 5px;
+
         border-radius: 25px;
+
+        box-sizing: border-box;
     }
+
 
     .menu a {
         flex: 1;
+        min-width: 0;
     }
+
 
     .menu button {
         width: 100%;
         height: 50px;
+
         font-size: 12px;
+
         margin: 0;
+
+        padding: 0;
     }
+
 
     .menu::before {
         height: 40px;
     }
 
+
+    /* CARROSSEL */
+
     .secao-carrossel {
+        grid-column: 1;
+
         width: 100%;
+        max-width: 100%;
+
         padding: 0 5px;
-        margin: 10px auto;
+
+        margin: 10px 0;
+
+        box-sizing: border-box;
+
+        min-width: 0;
     }
+
 
     #carrossel {
+        width: 100%;
+        max-width: 100%;
+
         height: 250px;
+
         border-radius: 8px;
+
+        box-sizing: border-box;
     }
 
-    .esquerda,
-    .direita {
+
+    .slides {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .slides img {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* BOTÕES DO CARROSSEL */
+
+    .botao-esquerda,
+    .botao-direita {
         width: 35px;
         height: 35px;
+
         font-size: 18px;
     }
 
-    .esquerda {
+
+    .botao-esquerda {
         left: 8px;
     }
 
-    .direita {
+
+    .botao-direita {
         right: 8px;
     }
 
-    main {
-        width: 100%;
-        padding: 10px;
-    }
+
+    /* ASIDE */
 
     aside {
-        width: 100%;
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+
+        min-width: 0;
+
+        margin: 10px;
+
         padding: 15px;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
     }
+
+
+    /* MAIN */
+
+    main {
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+
+        min-width: 0;
+
+        margin: 10px;
+
+        padding: 10px;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* VÍDEO */
+
+    #video {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    #video iframe {
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        box-sizing: border-box;
+    }
+
+
+    /* FOOTER */
 
     footer {
         width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
         padding: 15px 10px;
+
         font-size: 12px;
+
+        overflow-wrap: break-word;
     }
+
 
     footer h2 {
         font-size: 18px;
     }
 
+
     footer p {
         margin-top: 8px;
     }
 
+
+    /* SOBRE NÓS */
+
     main.sobre-pagina {
+        width: 100%;
+        max-width: 100%;
+
         padding: 15px 15px 40px 15px;
+
         gap: 30px;
+
+        margin: 0;
     }
 
+
     .secao-sobre-grupo {
+        width: 100%;
+        max-width: 100%;
+
         padding: 25px 18px;
+
+        box-sizing: border-box;
     }
+
 
     .titulo-secao {
         font-size: 22px;
     }
 
+
     .foto-container {
         width: 115px;
         height: 115px;
+    }
+
+    #container.pagina-contato {
+        width: 100%;
+        min-height: 100vh;
+
+        overflow-x: hidden;
+    }
+
+    #container.pagina-contato main.contato-pagina {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        padding: 30px 12px;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        align-items: flex-start;
+    }
+
+    .contato-card {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        margin: 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .contato-email {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    .botao-contato {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
     }
 }
 
 /* CELULARES MUITO PEQUENOS */
 @media (max-width: 400px) {
+    
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    #container {
+        width: 100%;
+        max-width: 100%;
+
+        min-width: 0;
+
+        overflow-x: hidden;
+    }
+
+
+    header {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
     .logo {
         width: 90vw;
+        max-width: 100%;
     }
+
+
+    /* MENU */
 
     .menu button {
         font-size: 10px;
     }
 
-    #carrossel {
-        height: 200px;
+
+    /* CARROSSEL */
+
+    .secao-carrossel {
+        width: 100%;
+        max-width: 100%;
+
+        padding-left: 5px;
+        padding-right: 5px;
+
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .esquerda,
-    .direita {
+
+    #carrossel {
+        width: 100%;
+        max-width: 100%;
+
+        height: 200px;
+
+        border-radius: 8px;
+    }
+
+
+    .botao-esquerda,
+    .botao-direita {
         width: 30px;
         height: 30px;
+
         font-size: 15px;
+    }
+
+
+    /* ASIDE */
+
+    aside {
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+
+        margin: 10px;
+    }
+
+
+    /* MAIN */
+
+    main {
+        width: calc(100% - 20px);
+        max-width: calc(100% - 20px);
+
+        margin: 10px;
+    }
+
+
+    /* TEXTO */
+
+    aside h1 {
+        font-size: 1.1rem;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+
+    main h1 {
+        max-width: 100%;
+
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    #container.pagina-contato main.contato-pagina {
+        padding: 20px 10px;
+    }
+
+    .contato-card {
+        padding: 30px 15px;
     }
 }
 
@@ -225,65 +607,136 @@
 @media (max-width: 700px) {
     .menu-mobile {
         display: block;
+
         top: 15px;
         left: 15px;
+
         margin: 0;
+
+        box-sizing: border-box;
     }
+
 
     .icones-header {
         top: 10px;
         right: 10px;
+
         gap: 8px;
+
+        max-width: calc(100% - 20px);
     }
+
 
     .icones-header img {
         width: 28px;
         height: 28px;
     }
 
+
     .menu {
         display: none;
+
         position: absolute;
+
         top: 65px;
         left: 15px;
+
         width: 180px;
+        max-width: calc(100vw - 30px);
+
         height: auto;
+
         flex-direction: column;
+
         padding: 10px;
+
         background: #181D37;
+
         border: 2px solid rgba(255,255,255,.2);
+
         border-radius: 15px;
+
         z-index: 25;
+
         overflow: visible;
+
+        box-sizing: border-box;
     }
+
 
     .menu.aberto {
         display: flex;
     }
 
+
     .menu a {
         width: 100%;
+        min-width: 0;
     }
+
 
     .menu button {
         width: 100%;
+
         height: 45px;
+
         margin: 3px 0;
+
         font-size: 14px;
     }
+
 
     .menu::before {
         display: none;
     }
 
+
     .caixa-busca {
         width: 180px;
+        max-width: calc(100vw - 70px);
+
         height: 38px;
+
         right: 35px;
     }
+
 
     .icone-busca {
         width: 28px;
         height: 28px;
     }
+
+}
+
+/* ===================== PÁGINA CONTATO ===================== */
+
+#container.pagina-contato {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+#container.pagina-contato header {
+    width: 100%;
+    max-width: 100%;
+}
+
+#container.pagina-contato main.contato-pagina {
+    width: 100%;
+    max-width: 100%;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+#container.pagina-contato footer {
+    width: 100%;
+    max-width: 100%;
 }

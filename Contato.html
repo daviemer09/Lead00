@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contato | Lead</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+
+<body>
+
+    <div id="container" class="pagina-contato">
+
+        <!-- CABEÇALHO -->
+        <header>
+
+            <div class="icones-header">
+
+                <div class="busca">
+                    <img src="imgs/buscar-icone.png"
+                         alt="Buscar"
+                         class="icone-busca">
+
+                    <div class="caixa-busca">
+                        <input type="text" placeholder="Pesquisar...">
+
+                        <button type="button">
+                            <img src="imgs/buscar-icone.png" alt="Buscar">
+                        </button>
+                    </div>
+                </div>
+
+                <a href="login-cadastro/cadastro.php">
+                    <img src="imgs/login-icone.png" alt="Login">
+                </a>
+
+                <img src="imgs/carrinho-icone.png" alt="Carrinho">
+
+            </div>
+
+            <img class="logo"
+                 src="imgs/logo-fundo-azul.png"
+                 alt="Logotipo Lead">
+
+            <!-- BOTÃO MOBILE -->
+            <button class="menu-mobile" id="menuMobile">☰</button>
+
+            <!-- MENU -->
+            <nav class="menu" id="menu">
+
+                <a href="index.html">
+                    <button>Home</button>
+                </a>
+
+                <a href="Sobrenos.html">
+                    <button>Sobre nós</button>
+                </a>
+
+                <a href="Produtos.html">
+                    <button>Produtos</button>
+                </a>
+
+                <a href="Contato.html">
+                    <button>Contato</button>
+                </a>
+
+            </nav>
+
+        </header>
+
+
+        <!-- CONTEÚDO DA PÁGINA -->
+        <main class="contato-pagina">
+
+            <section class="contato-card">
+
+                <div class="contato-icone">
+                    ✉
+                </div>
+
+                <h1>Entre em contato conosco</h1>
+
+                <p class="contato-introducao">
+                    Tem alguma dúvida, sugestão ou precisa de ajuda?
+                    Entre em contato com a equipe Lead. Estamos à disposição
+                    para atender você.
+                </p>
+
+
+                <div class="contato-email">
+
+                    <span class="email-icone">✉</span>
+
+                    <div>
+                        <h2>Nosso Gmail</h2>
+
+                        <!-- TROQUE PELO GMAIL REAL DA LEAD -->
+                        <p>ecommerc.ready.to.lead@gmail.com</p>
+                    </div>
+
+                </div>
+
+
+                <a
+                    class="botao-contato"
+                    href="mailto:lead.contato@gmail.com?subject=Contato%20-%20Lead"
+                >
+                    Enviar um e-mail
+                </a>
+
+
+                <p class="contato-observacao">
+                    Ao clicar no botão, seu aplicativo de e-mail será aberto
+                    para que você possa enviar sua mensagem diretamente para
+                    nossa equipe.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- RODAPÉ -->
+        <footer>
+
+            <img
+                class="clicko"
+                src="imgs/clicko-fundo-branco-removebg.png"
+                alt="Logotipo Lead"
+            >
+
+            <h2>&copy; LEAD</h2>
+
+            <p>Feito para fins educacionais. CTI - 2026</p>
+
+            <p>
+                Alunos: Ana Livia Orzam N°4, Davi Emer N°9,
+                Eduardo Rezende N°11, Lara Ibrahim N°20,
+                Lorena Mainini N°23
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- MENU MOBILE -->
+    <script>
+
+        const menuMobile = document.getElementById("menuMobile");
+        const menuNavegacao = document.getElementById("menu");
+
+        menuMobile.addEventListener("click", () => {
+            menuNavegacao.classList.toggle("aberto");
+        });
+
+    </script>
+
+
+    <!-- EFEITO DO MENU -->
+    <script>
+
+        const menu = document.querySelector(".menu");
+        const links = document.querySelectorAll(".menu a");
+
+        function mover(link) {
+            menu.style.setProperty("--x", link.offsetLeft + "px");
+            menu.style.setProperty("--w", link.offsetWidth + "px");
+        }
+
+        links.forEach(link => {
+
+            link.addEventListener("mouseenter", () => {
+                mover(link);
+            });
+
+        });
+
+        mover(links[3]);
+
+    </script>
+
+</body>
+</html>
