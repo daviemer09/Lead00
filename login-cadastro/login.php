@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <p>
                 Ainda não possui uma conta?
-                <a href="cadastro.php">Cadastre-se</a>
+                <a href="../adicionarUsuario.php">Cadastre-se</a>
             </p>
 
             <p>
